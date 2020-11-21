@@ -897,7 +897,7 @@ export class Replayer {
         const realParent = this.fragmentParentMap.get(parent);
         if (realParent && realParent.contains(target)) {
           realParent.removeChild(target);
-        } else {
+        } else if (parent.contains(target)) {
           parent.removeChild(target);
         }
       }
